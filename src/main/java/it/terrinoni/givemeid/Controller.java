@@ -17,6 +17,7 @@ import static spark.Spark.get;
  * @author Marco Terrinoni
  */
 public class Controller {
+
     public static void main(String[] args) {
         new Controller();
     }
@@ -25,7 +26,7 @@ public class Controller {
         Spark.setPort(8082);
         initializeRoute();
     }
-
+    
     private void initializeRoute() {
         get("/", new Route() {
             @Override
