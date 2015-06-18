@@ -49,7 +49,7 @@ public class Controller {
         get("/", new Route() {
             @Override
             public Object handle(Request rqst, Response rspns) {
-                return "Your new ID is: " + new ObjectId().toHexString();
+                return "SHUT UP AND TAKE MY ID -> " + new ObjectId().toHexString();
             }
         });
     }
