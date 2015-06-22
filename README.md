@@ -5,6 +5,6 @@ Extremely simple Java Spark server that gives you an ID, which is obtained from 
 To obtain the final jar just compile and build the code with Maven (or by using an IDE such as NetBeans), then run the jar with the following command:
 `java -jar GiveMeId-0.0.1-jar-with-dependencies.jar`
 
-The Spark web server will run on port 8082.
+The Spark web server will run on port 8082, accessible via browser.
 
 Now, SHUT UP AND TAKE YOUR ID!!!1!
