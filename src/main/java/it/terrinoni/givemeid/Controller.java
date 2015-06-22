@@ -50,7 +50,7 @@ public class Controller {
             @Override
             public Object handle(Request rqst, Response rspns) {
                 System.out.println("New ID requested.");
-                return "SHUT UP AND TAKE MY ID -> " + new ObjectId().toHexString();
+                return "SHUT UP AND TAKE YOUR ID -> " + new ObjectId().toHexString();
             }
         });
     }
