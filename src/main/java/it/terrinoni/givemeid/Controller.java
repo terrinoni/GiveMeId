@@ -24,11 +24,7 @@
 package it.terrinoni.givemeid;
 
 import org.bson.types.ObjectId;
-import spark.Request;
-import spark.Response;
-import spark.Route;
-import spark.Spark;
-import static spark.Spark.get;
+import static spark.Spark.*;
 
 /**
  *
@@ -37,21 +33,22 @@ import static spark.Spark.get;
 public class Controller {
 
     public static void main(String[] args) {
-        new Controller();
+        if (args.length == 0) { // default port
+            new Controller(8082);
+        } else { // use specified port
+            new Controller(Integer.parseInt(args[0]));
+        }
     }
-    
-    public Controller() {
-        Spark.setPort(8082);
+
+    public Controller(int portNum) {
+        port(portNum); // specify spark port
         initializeRoute();
     }
-    
+
     private void initializeRoute() {
-        get("/", new Route() {
-            @Override
-            public Object handle(Request rqst, Response rspns) {
-                System.out.println("New ID requested.");
-                return "SHUT UP AND TAKE YOUR ID -> " + new ObjectId().toHexString();
-            }
+        get("/", (req, res) -> {
+            System.out.println("New ID requested");
+            return ("SHUT UP AND TAKE YOUR ID -> " + new ObjectId().toHexString());
         });
     }
 }
